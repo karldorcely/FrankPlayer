@@ -1,0 +1,58 @@
+ body 
+{
+ margin: 0;
+ padding: 0;
+}
+.AlbumButton
+{
+    scroll-behavior: smooth;
+}
+
+
+
+
+input {
+    margin-top: 2%;
+    
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    
+
+}
+
+figure {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    border: solid black;
+}
+button {
+    margin-right: 15px;
+    margin-bottom: 10px
+}
+
+form {
+    width: 450px;
+    margin-left: 500px;
+}
+/*header {
+    background-color: black;
+    height: 200px;
+    margin-top: 0%;
+    margin-bottom: 20%;
+}
+
