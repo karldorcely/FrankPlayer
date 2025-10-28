@@ -1,14 +1,89 @@
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+:root
+ {
+    --main-color: black;
+    --accent-color: var(--accent-color);
+ }
+ 
  body 
 {
  margin: 0;
  padding: 0;
+ background-color: black;
 }
-.AlbumButton
-{
+figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+
+header {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    height: 80px; /* Set a fixed height for header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.AlbumButton {
     scroll-behavior: smooth;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 8px solid #000000;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    background: 
+        radial-gradient(circle at 60% 60%, #111 70%, #ffffff 100%),
+        repeating-radial-gradient(circle, 
+            transparent 0px, 
+            transparent 2px, 
+            rgba(255,255,255,0.04) 2.5px, 
+            transparent 3px
+        ),
+        /* Optional: Add a noise texture PNG for realism */
+        /* url('../Assets/noise-texture.png'), */
+        linear-gradient(120deg, rgba(255,255,255,0.07) 0%, transparent 60%);
+    animation: spin 3s linear infinite, floatVinyl 2.5s ease-in-out infinite alternate;
+@keyframes floatVinyl {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+    
+.silver-text {
+    background-color: black;
+    
+}
+    
 }
 
-
+ .covers {
+    border: solid linear-gradient(to right, #a3979400, #807a73, #fff7f5db) width 10px;
+}
+ 
+main {
+    background-image: url(../Assets/Studio.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 80px;
+    height: 1000px;
+}
 
 
 input {
@@ -22,41 +97,66 @@ fieldset {
     
 }
 
+label {
+    color: silver;
+}
+
 h1 {
     display: flex;
     justify-content: center;
-    margin-top: 0.5rem; /* reduced large gap so sticky header sits at top */
-    position: -webkit-sticky; /* Safari */
     position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 0.75rem 1rem;
-    color: rgb(255, 255, 255);
-    background-color: black;
+    background: linear-gradient(90deg, #C0C0C0, #FFFFFF, #A9A9A9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
     
-
 }
 
-figure {
+
+
+.AlbumButton img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-img {
-    border: solid black;
-}
+
 button {
     margin-right: 15px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 form {
     width: 450px;
-    margin-left: 500px;
+    margin: 0 auto;
+    border-radius: 20px solid ;
+    box-shadow: 0 0 0 4px #000000,
+    0 0 0 8px #00000016,
+    0 0 0 12px #000000d4;
+    background: linear-gradient( #a3979400, #5c5753, #2b2928db);
+}
+
+footer {
+    background-color: black;
+    height: 200px;
+    margin-top: 3%;
+    margin-bottom: 0%;
 }
 /*header {
     background-color: black;
-    height: 200px;
+    height: 100px;
     margin-top: 0%;
     margin-bottom: 20%;
 }
