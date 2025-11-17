@@ -3,28 +3,21 @@
     100% { transform: rotate(360deg); }
 }
 
-
-
-:root
- {
-    --main-color: black;
-    --accent-color: var(--accent-color);
- }
- 
- body 
-{
- margin: 0;
- padding: 0;
- background-color: black;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow-x: hidden;
 }
 figure {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 0 auto;
 }
-
-
 
 header {
     background-color: black;
@@ -33,18 +26,54 @@ header {
     left: 0;
     width: 100%;
     z-index: 10;
-    height: 80px; /* Set a fixed height for header */
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 30px;
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -65px;
+}
 
+.demo-button {
+    background: linear-gradient(90deg, #C0C0C0, #FFFFFF, #A9A9A9);
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    left: 30px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.demo-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+}
+
+.demo-button:active {
+    transform: translateY(0);
+}
+
+.demo-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 
 .AlbumButton {
-    scroll-behavior: smooth;
+    position: relative;
     width: 500px;
     height: 500px;
+    aspect-ratio: 1;
     border-radius: 50%;
     border: 8px solid #000000;
     box-shadow: 0 0 40px rgba(0,0,0,0.8);
@@ -56,45 +85,27 @@ header {
             rgba(255,255,255,0.04) 2.5px, 
             transparent 3px
         ),
-        /* Optional: Add a noise texture PNG for realism */
-        /* url('../Assets/noise-texture.png'), */
         linear-gradient(120deg, rgba(255,255,255,0.07) 0%, transparent 60%);
-    animation: spin 3s linear infinite, floatVinyl 2.5s ease-in-out infinite alternate;
-@keyframes floatVinyl {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-30px); }
-}
-    
-.silver-text {
-    background-color: black;
-    
-}
-    
+    animation: spin 3s linear infinite;
 }
 
- .covers {
-    border: solid linear-gradient(to right, #a3979400, #807a73, #fff7f5db) width 10px;
-}
- 
 main {
     background-image: url(../Assets/Studio.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: 80px;
-    height: 1000px;
+    padding-top: 150px;
+    min-height: 100vh;
+    padding-bottom: 50px;
 }
-
 
 input {
     margin-top: 2%;
-    
 }
 
 fieldset {
     display: flex;
     flex-direction: column;
-    
 }
 
 label {
@@ -111,10 +122,30 @@ h1 {
     background-clip: text;
     color: transparent;
     text-align: center;
-    
 }
 
+.texts {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, #C0C0C0, #FFFFFF, #A9A9A9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
 
+#frankbio {
+    background: #000000 !important;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    color: silver !important;
+    -webkit-text-fill-color: silver !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+}
 
 .AlbumButton img {
     width: 180px;
@@ -127,11 +158,7 @@ h1 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-
 
 button {
     margin-right: 15px;
@@ -139,13 +166,15 @@ button {
 }
 
 form {
-    width: 450px;
+    width: 90%;
+    max-width: 450px;
     margin: 0 auto;
-    border-radius: 20px solid ;
+    padding: 20px;
+    border-radius: 20px;
     box-shadow: 0 0 0 4px #000000,
     0 0 0 8px #00000016,
     0 0 0 12px #000000d4;
-    background: linear-gradient( #a3979400, #5c5753, #2b2928db);
+    background: transparent;
 }
 
 footer {
@@ -154,10 +183,94 @@ footer {
     margin-top: 3%;
     margin-bottom: 0%;
 }
-/*header {
-    background-color: black;
-    height: 100px;
-    margin-top: 0%;
-    margin-bottom: 20%;
+
+@media screen and (max-width: 768px) {
+    header {
+        height: 180px;
+    }
+    main {
+        padding-top: 180px;
+    }
+    nav {
+        margin-left: 0;
+    }
+    h1 {
+        text-align: center;
+        justify-content: center;
+        font-size: 1.8rem;
+    }
+    .silver-text {
+        margin: 5px 0;
+        font-size: 14px;
+        text-align: center;
+    }
+    .demo-button {
+        position: static;
+        margin-top: 5px;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }
 
+@media screen and (max-width: 600px) {
+    header {
+        height: 200px;
+    }
+    main {
+        padding-top: 200px;
+    }
+    figure {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .AlbumButton {
+        width: 300px;
+        height: 300px;
+        aspect-ratio: 1;
+    }
+    .AlbumButton img {
+        width: 108px;
+        height: 108px;
+    }
+    #frankbio {
+        width: 90%;
+        padding: 15px;
+    }
+}
+@media screen and (max-width: 480px) {
+    header {
+        height: 180px;
+    }
+    main {
+        padding-top: 180px;
+    }
+    .AlbumButton {
+        width: 200px;
+        height: 200px;
+        aspect-ratio: 1;
+    }
+    .AlbumButton img {
+        width: 72px;
+        height: 72px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 300px) {
+    .AlbumButton {
+        width: 150px;
+        height: 150px;
+        aspect-ratio: 1;
+    }
+    .AlbumButton img {
+        width: 54px;
+        height: 54px;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+}

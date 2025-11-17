@@ -3,29 +3,43 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
-<title> Frank Ocean Albums Player </title>
+<title> Frank Ocean Tribute </title>
 <link rel="stylesheet" href="style/FrankOceanStyle.css">
 </head>
 <body>
 <header>
 <nav>
-<h1> Frank Ocean Album Listener </h1>
-<p class="silver-text"> The place to listen to Frank Ocean's discography </p>
+<h1 class="texts"> Frank Ocean: A Tribute to a Genius </h1>
+<p class="silver-text"> Read our analysis while listening to Frank Ocean's discography </p>
+<button id="play-demo-btn" class="demo-button">Play Demo Now</button>
 </nav>
 </header>
-<main >
-   <!---- <h1 class="silver-text"> Nostalgia Ultra </h1>-->
+<main>
 <figure>
-<button class="AlbumButton"><img class="covers" id="Nostalgia" src="Assets/NostalgiaUltra.webp" alt="ChannelOrange" height="350"></button> 
-<!--<button class="AlbumButton"><img class="covers" id="Blonde" src="Assets\Channel_ORANGE.jpg" alt="Blonde" height="350"></a></button> -->
-<button class="AlbumButton"><img class="covers" id="Endless" src="Assets/Endlessagain.png" alt="ChannelOrange" height="350"></button> 
+<button class="AlbumButton"><img id="ChannelOrange" src="Assets/Channel_ORANGE.jpg" alt="Channel Orange"></button>
+<button class="AlbumButton"><img id="Blonde" src="Assets/Blonde_-_Frank_Ocean.jpeg" alt="Blonde"></button>
+</figure>
+<h1 class="texts"> Frank Ocean  </h1>
+<h3 class="texts"> How his genius changed R&B forever </h3>
+<p id="frankbio" class="texts">
+    Frank Ocean born Christopher Edwin Breaux, is an American singer known
+    for his dynamic vocal style and conceptual albums. <br>
+    He first gained recognition after his critically acclaimed mixtape Nostalgia Ultra,
+    featuring the hit single "Novacane".<br> His debut Album "Channel Orange" wa released in 2012,
+    earning him a Grammy Award for Best Urban Contemporary Album. <br> The album featured
+    vintage drums, and lush synthesizers, and explored themes of unrequited love and social issues with songs
+    like Bad Religion and Super Rich Kids. <br>
+    In 2016, Ocean released his highly anticipated second album "Blonde",
+    which debuted at number one on the Billboard 200 chart.<br> This project blended
+    elements of R&B, pop, electric, hip-hop and avant-garde music, showcasing his versatility as an artist.
+    After Blonde, the music realm changed forever,<br> with artist using Frank as an inspiration
+    for their own works, and pushing boundaries of R&B music.
+</p>
 </main>
 <footer>
-
-</figure>
 <form id="login">
 <fieldset id="loginpage">
-    <label class="silver-text for="Uname"> Username: </label>
+    <label class="silver-text" for="Uname"> Username: </label>
     <input type="text" placeholder="Enter username" name="username" required>
     
     <label class="silver-text" for="email"> Email: </label>
@@ -33,10 +47,16 @@
 
     <label class="silver-text" for="pword"> Password: </label>
     <input type="password" placeholder="Enter password" name="password" required>
-
+    <input type="submit" value="Login">
 </fieldset>
 </form>
-
 </footer>
+
+<audio id="frankocean-intro" preload="auto">
+    <source src="Assets/Pink + White.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script src="Script/FrankOceanListener.js"></script>
 </body>
 </html>
