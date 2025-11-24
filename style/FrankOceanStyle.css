@@ -112,7 +112,7 @@ label {
     color: silver;
 }
 
-h1 {
+/*h1 {
     display: flex;
     justify-content: center;
     position: sticky;
@@ -122,12 +122,12 @@ h1 {
     background-clip: text;
     color: transparent;
     text-align: center;
-}
+}*/
 
 .texts {
     display: flex;
     justify-content: center;
-    background: linear-gradient(90deg, #C0C0C0, #FFFFFF, #A9A9A9);
+    background: linear-gradient(90deg, #747474, #FFFFFF, #A9A9A9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

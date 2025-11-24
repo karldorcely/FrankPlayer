@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('frankocean-intro');
     const playButton = document.getElementById('play-demo-btn');
+    const loginForm = document.getElementById('login');
     
     if (audio && playButton) {
         playButton.addEventListener('click', () => {
@@ -20,5 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Error playing audio:', error);
             });
         });
+    }
+
+    if (loginForm) {
+        console.log('Login form found');
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            console.log('Form submitted, redirecting...');
+            window.location.href = 'Pages/Blonde.html';
+        });
+    } else {
+        console.log('Login form not found');
     }
 });
