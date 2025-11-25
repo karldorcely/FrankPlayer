@@ -1,4 +1,4 @@
-
+//Karl-Edouard Dorcely
 document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('frankocean-intro');
     const playButton = document.getElementById('play-demo-btn');
@@ -24,13 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (loginForm) {
-        console.log('Login form found');
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            console.log('Form submitted, redirecting...');
-            window.location.href = 'Pages/Blonde.html';
+            
+            const nickname = document.getElementById('nickname').value;
+            const country = document.getElementById('country').value;
+            const greetingInput = document.getElementById('greeting');
+            const greeting = greetingInput.value;
+            
+            if (greeting.length >= 20) {
+                greetingInput.value = `Thank you ${nickname} from ${country}!`;
+            } else {
+                greetingInput.value = 'You could say more!';
+            }
         });
-    } else {
-        console.log('Login form not found');
     }
 });
+
+
+
+
