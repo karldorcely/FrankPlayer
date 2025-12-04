@@ -27,16 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const nickname = document.getElementById('nickname').value;
-            const country = document.getElementById('country').value;
-            const greetingInput = document.getElementById('greeting');
-            const greeting = greetingInput.value;
-            
-            if (greeting.length >= 20) {
-                greetingInput.value = `Thank you ${nickname} from ${country}!`;
-            } else {
-                greetingInput.value = 'You could say more!';
-            }
+            // Redirect to review page
+            window.location.href = 'Pages/Blonde.html';
         });
     }
 });

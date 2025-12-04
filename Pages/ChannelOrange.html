@@ -3,8 +3,96 @@
 <head>
 <meta charset="utf-8">
 <title> Frank Ocean Channel Orange Player </title>
+<link rel="stylesheet" href="../style/DrumPad.css">
 </head>
 <body>
-
+    <header>
+        <nav>
+            <h1>Channel Orange Drum Pad</h1>
+            <div class="nav-links">
+                <a href="../Index.html" class="back-link">← Back to Home</a>
+                <a href="Blonde.html" class="back-link">← Back to Reviews</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="drumpad-container" aria-label="Drum Pad Instrument">
+            <section class="pad-row" aria-label="Top row drum pads">
+                <a class="drum-pad" data-key="Q" data-sound="kick" tabindex="0" aria-label="Kick drum - Press Q">
+                    <kbd class="key">Q</kbd>
+                    <small class="label">Kick</small>
+                </a>
+                <a class="drum-pad" data-key="W" data-sound="snare" tabindex="0" aria-label="Snare drum - Press W">
+                    <kbd class="key">W</kbd>
+                    <small class="label">Snare</small>
+                </a>
+                <a class="drum-pad" data-key="E" data-sound="hihat" tabindex="0" aria-label="Hi-Hat - Press E">
+                    <kbd class="key">E</kbd>
+                    <small class="label">Hi-Hat</small>
+                </a>
+            </section>
+            <section class="pad-row" aria-label="Middle row drum pads">
+                <a class="drum-pad" data-key="A" data-sound="openhat" tabindex="0" aria-label="Open Hat - Press A">
+                    <kbd class="key">A</kbd>
+                    <small class="label">Open Hat</small>
+                </a>
+                <a class="drum-pad" data-key="S" data-sound="clap" tabindex="0" aria-label="Clap - Press S">
+                    <kbd class="key">S</kbd>
+                    <small class="label">Clap</small>
+                </a>
+                <a class="drum-pad" data-key="D" data-sound="tom" tabindex="0" aria-label="Tom - Press D">
+                    <kbd class="key">D</kbd>
+                    <small class="label">Tom</small>
+                </a>
+            </section>
+            <section class="pad-row" aria-label="Bottom row drum pads">
+                <a class="drum-pad" data-key="Z" data-sound="perc1" tabindex="0" aria-label="Percussion 1 - Press Z">
+                    <kbd class="key">Z</kbd>
+                    <small class="label">Perc 1</small>
+                </a>
+                <a class="drum-pad" data-key="X" data-sound="perc2" tabindex="0" aria-label="Percussion 2 - Press X">
+                    <kbd class="key">X</kbd>
+                    <small class="label">Perc 2</small>
+                </a>
+                <a class="drum-pad" data-key="C" data-sound="crash" tabindex="0" aria-label="Crash cymbal - Press C">
+                    <kbd class="key">C</kbd>
+                    <small class="label">Crash</small>
+                </a>
+            </section>
+        </section>
+        
+        <section class="recording-section">
+            <article class="recording-controls">
+                <h2>Freestyle Over Moon River</h2>
+                <audio id="backing-track" src="../Assets/Moon River [music].mp3" preload="auto"></audio>
+                
+                <div class="control-buttons">
+                    <a id="record-btn" class="control-btn record" tabindex="0">
+                        <strong>● Record</strong>
+                    </a>
+                    <a id="stop-btn" class="control-btn stop" tabindex="0" disabled>
+                        <strong>■ Stop</strong>
+                    </a>
+                    <a id="download-btn" class="control-btn download" tabindex="0" disabled>
+                        <strong>⬇ Download</strong>
+                    </a>
+                </div>
+                
+                <p class="status-text" id="status">Press Record to start jamming over Moon River</p>
+            </article>
+        </section>
+        
+        <section class="instructions">
+            <article>
+                <h2>How to Play</h2>
+                <p>Click the pads or use your keyboard keys (Q, W, E, A, S, D, Z, X, C) to create beats inspired by Channel Orange. Each pad represents a different drum sound from a classic drum kit.</p>
+            </article>
+        </section>
+    </main>
+    
+    <footer></footer>
+    
+    <script src="../Script/drumpad.js"></script>
 </body>
 </html>

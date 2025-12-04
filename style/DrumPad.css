@@ -1,0 +1,374 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, #C0C0C0, #FFFFFF, #A9A9A9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.back-link {
+    color: silver;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.back-link:hover {
+    color: white;
+}
+
+main {
+    background-image: url(../Assets/Studio.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 180px;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.drumpad-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.pad-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.drum-pad {
+    width: 140px;
+    height: 140px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    color: silver;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.drum-pad::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.drum-pad:hover::before {
+    opacity: 1;
+}
+
+.drum-pad:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px rgba(192, 192, 192, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.drum-pad:active,
+.drum-pad.playing {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, #C0C0C0, #A9A9A9);
+    color: black;
+    box-shadow: 
+        0 2px 10px rgba(192, 192, 192, 0.5),
+        inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.drum-pad .key {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.drum-pad .label {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.instructions {
+    max-width: 600px;
+    width: 90%;
+}
+
+.instructions article {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.instructions h2 {
+    background: linear-gradient(90deg, #C0C0C0, #FFFFFF, #A9A9A9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.instructions p {
+    color: silver;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.recording-section {
+    max-width: 600px;
+    width: 90%;
+}
+
+.recording-controls {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.recording-controls h2 {
+    background: linear-gradient(90deg, #C0C0C0, #FFFFFF, #A9A9A9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+#backing-track {
+    display: none;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.control-btn.record {
+    background: linear-gradient(135deg, #ff4444, #cc0000);
+    color: white;
+    border-color: #ff6666;
+}
+
+.control-btn.record:hover:not([disabled]) {
+    background: linear-gradient(135deg, #ff6666, #ff0000);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 68, 68, 0.5);
+}
+
+.control-btn.stop {
+    background: linear-gradient(135deg, #555, #333);
+    color: white;
+    border-color: #777;
+}
+
+.control-btn.stop:hover:not([disabled]) {
+    background: linear-gradient(135deg, #777, #555);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(119, 119, 119, 0.5);
+}
+
+.control-btn.download {
+    background: linear-gradient(135deg, #44ff44, #00cc00);
+    color: black;
+    border-color: #66ff66;
+}
+
+.control-btn.download:hover:not([disabled]) {
+    background: linear-gradient(135deg, #66ff66, #00ff00);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(68, 255, 68, 0.5);
+}
+
+.control-btn[disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.status-text {
+    color: silver;
+    font-size: 14px;
+    margin: 0;
+}
+
+.status-text.recording {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+footer {
+    background-color: black;
+    height: 100px;
+    margin-top: 50px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .drumpad-container {
+        padding: 30px 20px;
+    }
+    
+    .drum-pad {
+        width: 100px;
+        height: 100px;
+        font-size: 1.8rem;
+    }
+    
+    .pad-row {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    main {
+        padding-top: 200px;
+    }
+    
+    .drumpad-container {
+        padding: 20px 15px;
+    }
+    
+    .drum-pad {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5rem;
+    }
+    
+    .pad-row {
+        gap: 10px;
+    }
+    
+    .instructions article {
+        padding: 20px;
+    }
+    
+    .instructions h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .drum-pad {
+        width: 60px;
+        height: 60px;
+        font-size: 1.3rem;
+    }
+    
+    .pad-row {
+        gap: 8px;
+    }
+    
+    .drumpad-container {
+        gap: 15px;
+    }
+}
