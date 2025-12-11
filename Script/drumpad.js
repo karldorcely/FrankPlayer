@@ -1,4 +1,5 @@
-// Drum sounds using Web Audio API to generate synthetic drum sounds
+/* Karl
+ Drum sounds using Web Audio API to generate synthetic drum sounds*/
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
 // Recording variables
